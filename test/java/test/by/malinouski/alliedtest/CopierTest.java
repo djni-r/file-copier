@@ -19,7 +19,6 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import org.junit.Before;
-import org.junit.Ignore;
 
 /**
  *
@@ -81,7 +80,6 @@ public class CopierTest {
         writerB.flush();
         copier.copy(fromA.toFile(), fromB.toFile(), resultFile.toString());
         List<String> lines = Files.readAllLines(resultFile);
-        lines.forEach(l -> System.out.println("line " + l));
         assertEquals(Arrays.asList("1", "2"), lines);
     }
     
@@ -93,7 +91,6 @@ public class CopierTest {
         writerB.flush();
         copier.copy(fromA.toFile(), fromB.toFile(), resultFile.toString());
         List<String> lines = Files.readAllLines(resultFile);
-        lines.forEach(l -> System.out.println("line " + l));
         assertEquals(Arrays.asList("1", "2", "2", "4"), lines);
     }
     
@@ -105,7 +102,6 @@ public class CopierTest {
         writerB.flush();
         copier.copy(fromA.toFile(), fromB.toFile(), resultFile.toString());
         List<String> lines = Files.readAllLines(resultFile);
-        lines.forEach(l -> System.out.println("line " + l));
         assertEquals(Arrays.asList("1", "2", "2", "3", "4", "4", "6", "8", 
                 "12", "13", "15", "25", "25"), lines);
     }
